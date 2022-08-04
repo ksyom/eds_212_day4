@@ -32,6 +32,7 @@ insect_leslie_test
 ```{r}
 # initial condition
 insect_y0 <- c(12000, 700, 500)
+#first element is eggs, second element is larvae, third element is number of larvae that become reproducing females
 
 ```
 
