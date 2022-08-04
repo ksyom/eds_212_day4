@@ -1,0 +1,52 @@
+---
+title: "Leslie Matrix Example"
+author: "Kimberly Yom"
+format: html
+editor: visual
+---
+
+## Leslie Matrix example
+
+Model population changes using the same example we did in lecture.
+
+Render works similarly to knit, but more flexible
+
+```{r}
+insect_leslie <- matrix(c(0, 0, 600, 0.2, 0, 0, 0, 0.08, 0), 
+                        nrow = 3, 
+                        ncol = 3, 
+                        byrow = TRUE)
+
+insect_leslie
+```
+
+```{r}
+insect_leslie_test <- matrix(c(0, 0, 600, 0.2, 0, 0), 
+                        nrow = 3, 
+                        ncol = 2, 
+                        byrow = TRUE)
+
+insect_leslie_test
+```
+
+```{r}
+# initial condition
+insect_y0 <- c(12000, 700, 500)
+
+```
+
+```{r}
+insect_y1 <- insect_leslie %*% insect_y0
+insect_y1
+```
+
+Estimate populations at each life stage at year 2 and year 3
+```{r}
+insect_y2 <- insect_leslie %*% insect_y1
+insect_y3 <- insect_leslie %*% insect_y2
+
+insect_y2
+insect_y3
+```
+
+
